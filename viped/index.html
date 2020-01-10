@@ -45,7 +45,8 @@
             font-size: 16px;
             text-align: justify;
         }
-        h1 { text-align: center; margin-top: 20px }
+        h1 { text-align: center; margin-top: 20px; }
+	h2 { margin-bottom: 20px; }
         .container > * { margin-bottom: 50px }
         #table-container { margin-top: 50px; height: 600px; overflow: auto; }
         #table-container tbody td { vertical-align: middle; }
@@ -80,6 +81,7 @@
         .samples-footer a{
             float: right;
         }
+	li {margin-bottom: 10px}
 
         .disabledLink {
             pointer-events:none;
@@ -89,53 +91,161 @@
     		.center {
         		width: 100%;
     		}
-}
-}
+	}
 
-    </style>
+	ul {list-style-type: circle; }
+
+	pre {
+		background-color: rgb(246, 248, 250);
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		box-sizing: border-box;
+		color: rgb(36, 41, 46);
+		font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+		font-size: 13.6px;
+		line-height: 19.7167px;
+		margin-bottom: 0px;
+		margin-top: 20px;
+		overflow: auto;
+		overflow-wrap: normal;
+		overflow-x: auto;
+		overflow-y: auto;
+		padding-left: 35px;
+		padding-bottom: 35px;
+		padding-right: 35px;
+	}
+
+	code {
+		background-attachment: scroll;
+		background-clip: border-box;
+		background-color: rgba(0, 0, 0, 0);
+		background-image: none;
+		background-origin: padding-box;
+		background-position: 0% 0%;
+		background-position-x: 0%;
+		background-position-y: 0%;
+		background-repeat: repeat;
+		background-size: auto;
+		border-bottom-color: rgb(36, 41, 46);
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+		border-bottom-style: none;
+		border-bottom-width: 0px;
+		border-image-outset: 0;
+		border-image-repeat: stretch;
+		border-image-slice: 100%;
+		border-image-source: none;
+		border-image-width: 1;
+		border-left-color: rgb(36, 41, 46);
+		border-left-style: none;
+		border-left-width: 0px;
+		border-right-color: rgb(36, 41, 46);
+		border-right-style: none;
+		border-right-width: 0px;
+		border-top-color: rgb(36, 41, 46);
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		border-top-style: none;
+		border-top-width: 0px;
+		box-sizing: border-box;
+		color: rgb(36, 41, 46);
+		display: inline;
+		font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+		font-size: 13.6px;
+		line-height: 19.7167px;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		overflow: visible;
+		overflow-wrap: normal;
+		overflow-x: visible;
+		overflow-y: visible;
+		padding-bottom: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-top: 0px;
+		white-space: pre;
+		word-break: normal;
+	}
+	</style>
 </head>
 <body>
     <div class="container">
         <h1>
-            Learning Pedestrian Detection from Virtual Worlds<br>
+            Virtual to Real adaptation of Pedestrian Detectors for Smart Cities<br>
             <small>
-                <a href="http://www.nmis.isti.cnr.it/amato/">Giuseppe Amato</a>,
                 <a href="https://scholar.google.it/citations?user=dCjyf-8AAAAJ&hl=it">Luca Ciampi</a>,
+		<a href="https://scholar.google.it/citations?user=g-UGCd8AAAAJ&hl=en">Nicola Messina</a>,
                 <a href="http://www.nmis.isti.cnr.it/falchi/">Fabrizio Falchi</a>,
                 <a href="http://www.nmis.isti.cnr.it/gennaro/">Claudio Gennaro</a>,
-                <a href="https://scholar.google.it/citations?user=g-UGCd8AAAAJ&hl=en">Nicola Messina</a>
+		<a href="http://www.nmis.isti.cnr.it/amato/">Giuseppe Amato</a>,
             </small>
         </h1>
         
         
         <div class="abstract">
             <h2>Abstract</h2>
-            <p> In this paper, we present a real-time pedestrian detection system that has been trained using a virtual environment. This is a very popular topic of research having endless practical applications 
-and recently, there was an increasing interest in deep learning architectures for performing such a task. However, the availability of large labeled datasets is a key point for an effective train of such algorithms. 
-For this reason, in this work, we introduced <b>ViPeD</b>, a new synthetically generated set of images extracted from a realistic 3D video game where the labels can be automatically generated exploiting 2D pedestrian positions extracted from the graphics engine. We exploited this new synthetic dataset fine-tuning a state-of-the-art computationally efficient Convolutional Neural Network (CNN). 
-A preliminary experimental evaluation, compared to the performance of other existing approaches trained on real-world images, shows encouraging results.
+            <p> Pedestrian detection through computer vision is a building block for a multitude of applications in the context of smart cities, such as surveillance of sensitive areas, personal safety, monitoring, and control of pedestrian flow, to mention only a few. Recently, there was an increasing interest in deep learning architectures for performing such a task. One of the critical objectives of these algorithms is to generalize the knowledge gained during the training phase to new scenarios having various characteristics, and a suitably labeled dataset is fundamental to achieve this goal. The main problem is that manually annotating a dataset usually requires a lot of human effort, and it is a time-consuming operation. For this reason, in this work, we introduced <b>ViPeD</b> (Virtual Pedestrian Dataset), a new synthetically generated set of images collected from a realistic 3D video game where the labels can be automatically generated exploiting 2D pedestrian positions extracted from the graphics engine. We used this new synthetic dataset training a state-of-the-art computationally-efficient Convolutional Neural Network (CNN) that is ready to be installed in smart low-power devices, like smart cameras. We addressed the problem of the domain-adaptation from the virtual world to the real one by fine-tuning the CNN using the synthetic data and also exploiting a mixed-batch supervised training approach. Extensive experimentation carried out on different real-world datasets shows very competitive results compared to other methods presented in the literature in which the algorithms are trained using real-world data.
             </p>
         </div>
-        <img class="img-thumbnail center" ng-src="clevr-imgs/train/CLEVR_train_000004.png" src="viped_example.png" width="50%">
+        
+	<div class="container">
+	  <div class="row">
+	    <div class="col-6 col-md-6"><img class="img-thumbnail" src="example_1_bbs.png"></div>
+	    <div class="col-6 col-md-6"><img class="img-thumbnail" src="example_2_bbs.png"></div>
+	    <div class="w-100"></div>
+	    <div class="col-6 col-md-6"><img class="img-thumbnail" src="example_3_bbs.png"></div>
+	    <div class="col-6 col-md-6"><img class="img-thumbnail" src="example_4_bbs.png"></div>
+	  </div> 
+	</div>
+
 
         <div class="paper">
-            <h2>Paper <small>(<a href="ICIAP__19___Learning_Pedestrian_Detection_from_Virtual_Worlds.pdf">Preprint PDF</a>, 3.3MB)</small></h2>
-            The paper has been presented at <a href="https://event.unitn.it/iciap2019/">ICIAP 2019</a> .
+            <h2>Papers</h2>
+		<ul>
+			<li><b>Learning Pedestrian Detection from Virtual Worlds</b> (<a href="ICIAP__19___Learning_Pedestrian_Detection_from_Virtual_Worlds.pdf"> Download</a>, 3.3MB). The paper has been presented at <a href="https://event.unitn.it/iciap2019/">ICIAP 2019</a>.
+			</li>
+			<li><b>Virtual to Real adaptation of Pedestrian Detectors for Smart Cities</b> <a href="https://arxiv.org/pdf/2001.03032.pdf"> (ArXiv Download</a>, 7.7MB). The paper has been submitted to the <a href="https://www.journals.elsevier.com/neurocomputing/call-for-papers/special-issue-on-advances-of-neurocomputing-for-smart-cities">Special Issue on Advances of Neurocomputing for Smart Cities</a>. This is the extended version of the first paper. It contains a wider experimental section and introduces experiments with a different supervised domain-adaptation approach.
+			</li>
+		</ul>
         </div>
 
         <div class="dataset">
-            <h2>Dataset</h2>
-		<h3>(section under construction)</h3>
-                <p>This dataset is an extension of the <a href="http://imagelab.ing.unimore.it/jta">JTA</a> (Joint Track Auto) dataset.
-                For this reason, we don't publish the images directly; we instead release the annotations and the Python code used for the image augmentation process. </p>
-                <p>
-                <a href="http://aimir.isti.cnr.it/viped/">Here</a> you can find more details about the ViPeD dataset, together with links to the code and the annotations.
+            <h2>Dataset and Code</h2>
+                <p>This dataset is an extension of the <a href="http://imagelab.ing.unimore.it/jta">JTA</a> (Joint Track Auto) dataset.</p>
+		<p>
+                <a href="http://aimir.isti.cnr.it/viped/">Here</a> you can find more details about the ViPeD dataset, together with the download link.
                 </p>
+		<p> The code for training and evaluating Faster-RCNN with our method is available in our <a href="https://github.com/ciampluca/Virtual-to-Real-Pedestrian-Detection">GitHub repository</a>.
         </div>
-        
+        <div class="cite">
+	    <h2>Cite our work</h2>
+		If you find this work or code useful for your research, please cite the following:
+		<pre><code>
+@misc{ciampi2020virtual,
+    title={Virtual to Real adaptation of Pedestrian Detectors for Smart Cities},
+    author={Luca Ciampi and Nicola Messina and Fabrizio Falchi and Claudio Gennaro and Giuseppe Amato},
+    year={2020},
+    eprint={2001.03032},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+
+@inproceedings{amato2019learning,
+  title={Learning pedestrian detection from virtual worlds},
+  author={Amato, Giuseppe and Ciampi, Luca and Falchi, Fabrizio and Gennaro, Claudio and Messina, Nicola},
+  booktitle={International Conference on Image Analysis and Processing},
+  pages={302--312},
+  year={2019},
+  organization={Springer}
+}</code></pre>
+	</div>
         <div class="acks">
             <p>
-We gratefully acknowledge the support of NVIDIA Corporation with the donation of the Tesla K40 GPU used for this research.</p>
+We gratefully acknowledge the support of NVIDIA Corporation with the donation of the Jetson TX2 used for this research.</p>
         </div>
     </div>
 </body>
