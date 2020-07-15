@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Learning Pedestrian Detection from Virtual Worlds</title>
+    <title>Unsupervised Domain Adaptation for Traffic Density Estimation and Counting</title>
     
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -175,11 +175,11 @@
 <body>
     <div class="container">
         <h1>
-            Learning Pedestrian Detection from Virtual Worlds<br>
+            Unsupervised Domain Adaptation for Traffic Density Estimation and Counting<br>
             <small>
                 <a href="https://scholar.google.it/citations?user=dCjyf-8AAAAJ&hl=it">Luca Ciampi</a>,
-		        <a href="https://scholar.google.it/citations?user=g-UGCd8AAAAJ&hl=en">Nicola Messina</a>,
-                <a href="https://scholar.google.it/citations?user=4Vr1dSQAAAAJ&hl=en">Fabrizio Falchi</a>,
+		        <a href="https://scholar.google.com/citations?user=f17rSrgAAAAJ&hl=pt-PT">Carlos Santiago</a>,
+                <a href="https://scholar.google.com/citations?user=Xi33QRIAAAAJ&hl=en">Joao Paulo Costeira</a>,
                 <a href="https://scholar.google.it/citations?user=sbFBI4IAAAAJ&hl=en">Claudio Gennaro</a>,
 		        <a href="https://scholar.google.it/citations?user=dXcskhIAAAAJ&hl=en">Giuseppe Amato</a>,
             </small>
@@ -188,10 +188,11 @@
         
         <div class="abstract">
             <h2>Abstract</h2>
-            <p> Pedestrian detection through computer vision is a building block for a multitude of applications in the context of smart cities, such as surveillance of sensitive areas, personal safety, monitoring, and control of pedestrian flow, to mention only a few. Recently, there was an increasing interest in deep learning architectures for performing such a task. One of the critical objectives of these algorithms is to generalize the knowledge gained during the training phase to new scenarios having various characteristics, and a suitably labeled dataset is fundamental to achieve this goal. The main problem is that manually annotating a dataset usually requires a lot of human effort, and it is a time-consuming operation. For this reason, in this work, we introduced <b>ViPeD</b> (Virtual Pedestrian Dataset), a new synthetically generated set of images collected from a realistic 3D video game where the labels can be automatically generated exploiting 2D pedestrian positions extracted from the graphics engine. We used this new synthetic dataset training a state-of-the-art computationally-efficient Convolutional Neural Network (CNN) that is ready to be installed in smart low-power devices, like smart cameras. We addressed the problem of the domain-adaptation from the virtual world to the real one by fine-tuning the CNN using the synthetic data and also exploiting a mixed-batch supervised training approach. Extensive experimentation carried out on different real-world datasets shows very competitive results compared to other methods presented in the literature in which the algorithms are trained using real-world data.
+            <p> Convolutional Neural Networks have produced state-of-the-art results for a multitude of tasks. However, the crux of these supervised methods is represented by the need for a massive amount of labeled data, and generalizing well to diverse testing scenarios remains a significant challenge. In many real-world applications, there is indeed a large <i>domain shift</i> between the distributions of the train (<i>source</i>) and test (<i>target</i>) domains, which implies a pronounced drop in performance at inference-time. Hence, algorithms that can automatically infer some knowledge from the <i>unlabeled</i> target dataset getting closer the two domains and relying only on the labeled source supervised learning are of great interest. This class of techniques is known as <i>>Unsupervised Domain Adaptation</i> (UDA), and it is particularly useful for the tasks in which acquiring new labeled data is very expensive, like instance and semantic segmentation. In this work, we propose an end-to-end CNN-based UDA algorithm for traffic density estimation and counting, based on adversarial learning in the <i>output space</i>. The density estimation is one of those tasks requiring per-pixel annotated labels and, therefore, needs a lot of human effort. We conduct experiments considering different domain shift, and we make publicly available two new datasets for the vehicle counting task. One of them, named <i>GTA - Grand Traffic Auto</i>, is a <i>synthetic</i> collection of images taken from a video game and <i>automatically</i> annotated with precise per-pixel labels. Experiments show a significant improvement compared to the performance of the model without domain adaptation.
             </p>
         </div>
-        
+ 
+ <!--       
 	<div class="container">
 	  <div class="row">
 	    <div class="col-6 col-md-6"><img class="img-thumbnail" src="example_1_bbs.png"></div>
@@ -201,29 +202,29 @@
 	    <div class="col-6 col-md-6"><img class="img-thumbnail" src="example_4_bbs.png"></div>
 	  </div> 
 	</div>
-
+-->
 
         <div class="paper">
             <h2>Papers</h2>
 		<ul>
-			<li><b>Learning Pedestrian Detection from Virtual Worlds</b> (<a href="ICIAP__19___Learning_Pedestrian_Detection_from_Virtual_Worlds.pdf"> Download</a>, 3.3MB). The paper has been presented at <a href="https://event.unitn.it/iciap2019/">ICIAP 2019</a>.
+			<li><b>Unsupervised Domain Adaptation for Traffic Density Estimation and Counting</b> (<a href="file.pdf"> Download</a>, 3.3MB). The paper has been submitted at <a href="https://www.micc.unifi.it/icpr2020/">ICPR 2020</a>.
 			</li>
-			<li><b>Virtual to Real adaptation of Pedestrian Detectors for Smart Cities</b> <a href="https://arxiv.org/pdf/2001.03032.pdf"> (ArXiv Download</a>, 7.7MB). This is the extended version of the first paper. It contains a wider experimental section and introduces experiments with a different supervised domain-adaptation approach.
+			<li><b>Unsupervised Vehicle Counting via Multiple CameraDomain Adaptation</b> <a href="paper"> (Download</a>, 7.7MB). The paper has been has been accepted at <a href="http://nehuai2020.aass.oru.se/">ECAI-2020 Workshop on "New Foundations for
+Human-Centered AI"</a>
 			</li>
 		</ul>
         </div>
 
         <div class="dataset">
-            <h2>Dataset and Code</h2>
-                <p>This dataset is an extension of the <a href="http://imagelab.ing.unimore.it/jta">JTA</a> (Joint Track Auto) dataset.</p>
-		<p>
-                <a href="http://aimir.isti.cnr.it/viped/">Here</a> you can find more details about the ViPeD dataset, together with the download link.
-                </p>
-		<p> The code for training and evaluating Faster-RCNN with our method is available in our <a href="https://github.com/ciampluca/Virtual-to-Real-Pedestrian-Detection">GitHub repository</a>.
+            <p>
+            Working in progress...
+            </p>
         </div>
         <div class="cite">
 	    <h2>Cite our work</h2>
 		If you find this work or code useful for your research, please cite the following:
+		Work in progress....
+		 <!-- 
 		<pre><code>
 @inproceedings{amato2019learning,
   title={Learning pedestrian detection from virtual worlds},
@@ -242,10 +243,11 @@
     primaryClass={cs.CV}
 }
 </code></pre>
+-->
 	</div>
         <div class="acks">
             <p>
-We gratefully acknowledge the support of NVIDIA Corporation with the donation of the Jetson TX2 used for this research.</p>
+This work was partially supported by LARSyS-FCT Plurianual funding 2020-2023 and by H2020 project AI4EU under GA 825619.</p>
         </div>
     </div>
 </body>
