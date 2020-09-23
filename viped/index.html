@@ -188,7 +188,7 @@
         
         <div class="abstract">
             <h2>Abstract</h2>
-            <p> Pedestrian detection through Computer Vision is a building block for a multitude of applications. Recently, there was an increasing interest in Convolutional Neural Network-based architectures for the execution of such a task. One of these supervised networks' critical goals is to generalize the knowledge learned during the training phase to new scenarios with different characteristics. A suitably labeled dataset is essential to achieve this purpose. The main problem is that manually annotating a dataset usually requires a lot of human effort, and it is costly. To this end, we introduce <b>ViPeD</b> (Virtual Pedestrian Dataset), a new synthetically generated set of images collected with the highly photo-realistic graphical engine of the video game GTA V - Grand Theft Auto V, where annotations are automatically acquired. However, when training solely on the synthetic dataset, the model experiences a Synthetic2Real Domain Shift leading to a performance drop when applied to real-world images. To mitigate this gap, we propose two different Domain Adaptation techniques suitable for the pedestrian detection task, but possibly applicable to general object detection. Experiments show that the network trained with ViPeD can generalize over unseen real-world scenarios better than the detector trained over real-world data, exploiting the variety of our synthetic dataset. Furthermore, we demonstrate that with our Domain Adaptation techniques, we can reduce the Synthetic2Real Domain Shift, making closer the two domains and obtaining a performance improvement when testing the network over the real-world images.
+            <p>Pedestrian detection through Computer Vision is a building block for a multitude of applications. Recently, there has been an increasing interest in convolutional neural network-based architectures to execute such a task. One of these supervised networks’ critical goals is to generalize the knowledge learned during the training phase to new scenarios with different characteristics. A suitably labeled dataset is essential to achieve this purpose. The main problem is that manually annotating a dataset usually requires a lot of human effort, and it is costly. To this end, we introduce <b>ViPeD</b> (Virtual Pedestrian Dataset), a new synthetically generated set of images collected with the highly photo-realistic graphical engine of the video game GTA V (Grand Theft Auto V), where annotations are automatically acquired. However, when training solely on the synthetic dataset, the model experiences a Synthetic2Real domain shift leading to a performance drop when applied to real-world images. To mitigate this gap, we propose two different domain adaptation techniques suitable for the pedestrian detection task, but possibly applicable to general object detection. Experiments show that the network trained with ViPeD can generalize over unseen real-world scenarios better than the detector trained over real-world data, exploiting the variety of our synthetic dataset. Furthermore, we demonstrate that with our domain adaptation techniques, we can reduce the Synthetic2Real domain shift, making the two domains closer and obtaining a performance improvement when testing the network over the real-world images.
             </p>
         </div>
         
@@ -206,9 +206,9 @@
         <div class="paper">
             <h2>Papers</h2>
 		<ul>
-			<li><b>Learning Pedestrian Detection from Virtual Worlds</b> (<a href="ICIAP__19___Learning_Pedestrian_Detection_from_Virtual_Worlds.pdf"> Download</a>, 3.3MB). The paper has been presented at <a href="https://event.unitn.it/iciap2019/">ICIAP 2019</a>.
+            <li><b>Virtual to Real adaptation of Pedestrian Detectors</b> <a href="sensors-20-05250-v2.pdf"> (Download</a>, 19.0MB). The paper has been published at <a href="https://www.mdpi.com/journal/sensors">Sensors</a>. This is the extended version of our previous conference paper and it contains a wider experimental section and introduces an additional supervised domain-adaptation approach.
 			</li>
-			<li><b>Virtual to Real adaptation of Pedestrian Detectors</b> <a href="https://arxiv.org/pdf/2001.03032.pdf"> (Pre-Print ArXiv Download</a>, 7.7MB). This is the extended version of the first paper. It contains a wider experimental section and introduces experiments with a different supervised domain-adaptation approach.
+			<li><b>Learning Pedestrian Detection from Virtual Worlds</b> (<a href="ICIAP__19___Learning_Pedestrian_Detection_from_Virtual_Worlds.pdf"> Download</a>, 3.3MB). The paper has been presented at <a href="https://event.unitn.it/iciap2019/">ICIAP 2019</a>.
 			</li>
 		</ul>
         </div>
@@ -225,6 +225,16 @@
 	    <h2>Cite our work</h2>
 		If you find this work or code useful for your research, please cite the following:
 		<pre><code>
+@article{ciampi2020virtual,
+  title={Virtual to Real Adaptation of Pedestrian Detectors},
+  author={Ciampi, Luca and Messina, Nicola and Falchi, Fabrizio and Gennaro, Claudio and Amato, Giuseppe},
+  journal={Sensors},
+  volume={20},
+  number={18},
+  pages={5250},
+  year={2020},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
 @inproceedings{amato2019learning,
   title={Learning pedestrian detection from virtual worlds},
   author={Amato, Giuseppe and Ciampi, Luca and Falchi, Fabrizio and Gennaro, Claudio and Messina, Nicola},
@@ -232,14 +242,6 @@
   pages={302--312},
   year={2019},
   organization={Springer}
-}
-@misc{ciampi2020virtual,
-    title={Virtual to Real adaptation of Pedestrian Detectors for Smart Cities},
-    author={Luca Ciampi and Nicola Messina and Fabrizio Falchi and Claudio Gennaro and Giuseppe Amato},
-    year={2020},
-    eprint={2001.03032},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
 }
 </code></pre>
 	</div>
